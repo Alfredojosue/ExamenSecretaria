@@ -1,0 +1,39 @@
+    <!-- creamos una tabla dinamica obteniendo la info de la ruta de usuario create -->
+    <section>
+        <div class="d-flex justify-content-between">
+            <h4>Usuarios registrados</h4>
+            <a routerLink"/users/create" class="btn btn-succes">Ingresar nueva persona</a>
+        </div>
+        <br>
+        <br>
+        <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>CURP</th>
+            <th>Edad</th>
+            <th>fechaRegistro</th>
+            <th>Correo</th>
+            <th>foto</th>
+            <th>contrasena</th>
+            <th>pokemonFav</th>
+        </tr>
+        <!-- ciclo para imprimir los usuario -->
+        <tr *ngFor="Usuarios ingresados">
+            <td>{{user.id}}</td>
+            <td>{{user.nombre}}</td>
+            <td>{{user.curp}}</td>
+            <td>{{user.edad}}</td>
+            <td>{{user.fechaRegistro}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.foto}}</td>
+            <td>{{contrasena}}</td>
+            <td>{{user.pokemonFav}}</td>
+            <td>
+            <!-- botones para editar y elininar perosona -->
+            <a href="#" [routerLink]="['/user/', 'edit', user.id  ]" class="btn btn-primary">Edit</a>
+            <button type="button" (click)="deletePerson(user.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+      </table>
+    </section>
